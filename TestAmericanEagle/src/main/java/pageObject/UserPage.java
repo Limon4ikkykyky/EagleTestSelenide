@@ -12,13 +12,13 @@ public class UserPage {
     SelenideElement checkFavoritesItem = $(By.xpath("//div[contains(@class,'favorites-tile')]"));
 
 
-    public void clickFavoritesButton() {
+    public void clickOnFavoritesButton() {
         addToFavoritesButton.click();
         goToFavoritesButton.click();
 
     }
 
-    public boolean favoritesItem() {
+    public boolean isFavoritesItemPresent() {
         checkFavoritesItem.shouldBe(Condition.appear);
         return checkFavoritesItem.is(Condition.visible);
     }

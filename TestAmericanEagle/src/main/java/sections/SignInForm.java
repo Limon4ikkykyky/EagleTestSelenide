@@ -12,7 +12,7 @@ public class SignInForm {
     SelenideElement emailField = $(By.xpath("//input[contains(@class,'form-input-username')]"));
     SelenideElement passwordField = $(By.xpath("//input[contains(@class,'form-input-password')]"));
     SelenideElement wrongDataMessage = $(By.xpath("//div[contains(@class,'qa-error-help-block')]"));
-    SelenideElement loginButton = $(By.xpath("//button[@name='login']"));
+    SelenideElement loginButton = $(By.name("login"));
     SelenideElement loginMessage = $("h2.modal-title");
     SelenideElement exitButton = $(By.xpath("//button[contains(@class,'qa-btn-cancel')]"));
 
@@ -24,13 +24,12 @@ public class SignInForm {
         loginButton.click();
         exitButton.click();
     }
-    public boolean loginAccountMessage() {
+    public boolean isLoginAccountMessagePresent() {
         loginMessage.shouldBe(Condition.appear);
         return loginMessage.is(Condition.visible);
     }
-    public boolean errorMessagePresent() {
+    public boolean isErrorMessagePresent() {
         wrongDataMessage.shouldBe(Condition.appear);
         return wrongDataMessage.is(Condition.visible);
     }
-
 }

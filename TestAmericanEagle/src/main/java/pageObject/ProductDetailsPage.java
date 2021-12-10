@@ -12,6 +12,17 @@ public class ProductDetailsPage {
     SelenideElement productColor = $("span.product-color");
     SelenideElement productReview = $(By.xpath("//div[@class='psp-extras-reviews']"));
     SelenideElement productPrice = $(By.xpath("//div[@class='psp-extras-price-promo']"));
+    SelenideElement sizeButton = $(By.xpath("//div[contains(@class,'qa-dropdown-toggle')]"));
+    SelenideElement elementDropDownList = $(By.xpath("//div[contains(@class,'cart-item')]"));
+    SelenideElement addToBagButtom = $(By.xpath("//button[contains(@class,'qa-btn-add-to-bag')]"));
+    SelenideElement viewBagButton = $(By.xpath("//button[contains(@class,' qa-btn-view-bag')]"));
+
+    public void addToBag() {
+        sizeButton.click();
+        elementDropDownList.click();
+        addToBagButtom.click();
+        viewBagButton.click();
+    }
 
     public void verifyProductDetailsPageElementsIsPresent() {
         productColor.shouldBe(Condition.appear);

@@ -10,12 +10,12 @@ public class SignInTest extends BaseTest {
     @Test
     public void signInTest() {
         signInForm.signIn(emailData, passwordData);
-        Assertions.assertTrue(signInForm.loginAccountMessage(), "Login Account Message is not present");
+        Assertions.assertTrue(signInForm.isLoginAccountMessagePresent(), "Login Account Message is not present");
     }
 
     @Test
     public void signInTestNegative() {
         signInForm.signIn(emailDataNegative, passwordDataNegative);
-        Assertions.assertTrue(signInForm.errorMessagePresent(), "Error Message is not present");
+        Assertions.assertTrue(signInForm.isErrorMessagePresent(), "Error Message is not present");
     }
 }

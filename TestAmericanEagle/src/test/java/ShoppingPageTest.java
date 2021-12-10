@@ -8,7 +8,7 @@ public class ShoppingPageTest extends BaseTest{
     {
         searchForm.searchData(searchData);
         productListPage.clickOnFirstProduct();
-        shoppingPage.addToBag();
+        productDetailsPage.addToBag();
         Assertions.assertTrue(shoppingPage.itemInBag(),"Not found item in Bag");
     }
 }

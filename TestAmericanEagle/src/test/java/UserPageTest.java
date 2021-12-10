@@ -11,7 +11,7 @@ public class UserPageTest extends BaseTest {
         signInForm.signIn(emailData, passwordData);
         searchForm.searchData(searchData);
         productListPage.clickOnFirstProduct();
-        userPage.clickFavoritesButton();
-        Assertions.assertTrue(userPage.favoritesItem(), "Favorites Item is empty");
+        userPage.clickOnFavoritesButton();
+        Assertions.assertTrue(userPage.isFavoritesItemPresent(), "Favorites Item is empty");
     }
 }
