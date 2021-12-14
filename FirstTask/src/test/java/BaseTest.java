@@ -27,9 +27,9 @@ public class BaseTest {
     }
 
     private void initializeAllPages() {
-        aeriePage= new AeriePage();
-        footer=new Footer();
-        giftCardsPage=new GiftCardsPage();
+        aeriePage = new AeriePage();
+        footer = new Footer();
+        giftCardsPage = new GiftCardsPage();
     }
 
     @AfterEach
