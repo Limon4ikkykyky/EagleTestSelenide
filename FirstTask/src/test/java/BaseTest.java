@@ -1,8 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import pageObject.*;
-import sections.SearchForm;
-import sections.SignInForm;
+import sections.Footer;
 import utils.CommonUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,14 +12,10 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
 public class BaseTest {
-    HomePage homePage;
-    ProductListPage productListPage;
-    ProductDetailsPage productDetailsPage;
     AeriePage aeriePage;
-    UserPage userPage;
-    ShoppingPage shoppingPage;
-    SignInForm signInForm;
-    SearchForm searchForm;
+    Footer footer;
+    GiftCardsPage giftCardsPage;
+
 
     @BeforeEach
     public void setup() {
@@ -32,14 +27,9 @@ public class BaseTest {
     }
 
     private void initializeAllPages() {
-        homePage = new HomePage();
-        productListPage = new ProductListPage();
-        productDetailsPage = new ProductDetailsPage();
         aeriePage = new AeriePage();
-        userPage = new UserPage();
-        shoppingPage = new ShoppingPage();
-        signInForm=new SignInForm();
-        searchForm=new SearchForm();
+        footer = new Footer();
+        giftCardsPage = new GiftCardsPage();
     }
 
     @AfterEach
