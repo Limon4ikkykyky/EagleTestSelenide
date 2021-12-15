@@ -6,13 +6,12 @@ public class ChatTest extends BaseTest {
     public void chatTest() {
         homePage.openChat();
         chatPage.verifyChatPageElementsIsPresent();
-        chatPage.goToRealRewardsButton();
+        chatPage.clickOnRealRewardsButton();
         realRewardsChatPage.verifyRealRewardsPageElementsIsPresent();
-        realRewardsChatPage.goToImNotSeeingMyRewards();
+        realRewardsChatPage.clickOnImNotSeeingMyRewards();
         notSeeingMyRewardsChatPage.verifyNotSeeingPageElementsIsPresent();
         notSeeingMyRewardsChatPage.clickOnBackButton();
         realRewardsChatPage.clickOnExitButton();
-        homePage.chatIsClosed();
         Assertions.assertTrue(homePage.chatIsClosed(), "chat Not Closed");
     }
 }

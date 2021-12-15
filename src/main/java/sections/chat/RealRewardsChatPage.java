@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 
 public class RealRewardsChatPage {
     SelenideElement realRewardsTitle = $(By.xpath("//h3[contains(@class,'qa-title')]"));
-    SelenideElement imNotSeeingMyRewardsButton = $(By.xpath("//button[text()[contains(.,'not seeing my rewards')]]"));
+    SelenideElement imNotSeeingMyRewardsButton = $(By.name("\"I'm not seeing my rewards\""));
     SelenideElement resettingMyPasswordButton = $(By.xpath("//button[text()[contains(.,'having issues resetting my password')]]"));
     SelenideElement reportMissingPointsButton = $(By.xpath("//button[text()[contains(.,'How do I report missing points')]]"));
     SelenideElement myRewardIfIMakeAReturnButton = $(By.xpath("//button[text()[contains(.,'What happens to my reward if I make a return?')]]"));
@@ -31,7 +31,7 @@ public class RealRewardsChatPage {
         );
     }
 
-    public void goToImNotSeeingMyRewards() {
+    public void clickOnImNotSeeingMyRewards() {
         imNotSeeingMyRewardsButton.click();
     }
 

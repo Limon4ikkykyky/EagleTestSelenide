@@ -21,7 +21,7 @@ public class ChatPage {
 
     public void verifyChatPageElementsIsPresent() {
         title.shouldBe(Condition.appear);
-        assertAll("chat",
+        assertAll("verify chat elements",
                 () -> Assertions.assertTrue(returnsAndExchangesButton.is(Condition.visible), "Returns and Exchanges button isn't present"),
                 () -> Assertions.assertTrue(orderStatusAndShippingButton.is(Condition.visible), "Order Status and Shipping Button isn't present"),
                 () -> Assertions.assertTrue(title.is(Condition.visible), "title isn't present"),
@@ -33,7 +33,7 @@ public class ChatPage {
                 () -> Assertions.assertTrue(iNeedHelpWithSomethingElseButton.is(Condition.visible), "I need help with something elseButton isn't present")
         );
     }
-    public void goToRealRewardsButton() {
+    public void clickOnRealRewardsButton() {
         realRewardsButton.click();
     }
 }
