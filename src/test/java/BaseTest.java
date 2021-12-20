@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import pageObject.*;
+import sections.AccessoriesShoesPage;
 import sections.Footer;
 import sections.chat.ChatPage;
 import sections.chat.NotSeeingMyRewardsChatPage;
@@ -22,6 +23,7 @@ public class BaseTest {
     ChatPage chatPage;
     RealRewardsChatPage realRewardsChatPage;
     NotSeeingMyRewardsChatPage notSeeingMyRewardsChatPage;
+    AccessoriesShoesPage accessoriesShoesPage;
 
     @BeforeEach
     public void setup() {
@@ -40,6 +42,7 @@ public class BaseTest {
         chatPage = new ChatPage();
         realRewardsChatPage = new RealRewardsChatPage();
         notSeeingMyRewardsChatPage = new NotSeeingMyRewardsChatPage();
+        accessoriesShoesPage = new AccessoriesShoesPage();
     }
 
     @AfterEach
