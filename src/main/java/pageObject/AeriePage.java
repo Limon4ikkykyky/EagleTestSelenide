@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class AeriePage {
     SelenideElement switchToAerie = $(By.xpath("//a[contains(@class,'logo-link-aerie')]"));
     SelenideElement aerieIcon = $(By.xpath("//div[contains(@class,'active-logo-aerie')]"));
-    SelenideElement footer=$(By.xpath("//div[contains(@class,'footer-default')]"));
+    SelenideElement footer = $(By.xpath("//div[contains(@class,'footer-default')]"));
 
     public void switchToAerie() {
         switchToAerie.click();

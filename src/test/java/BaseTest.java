@@ -20,6 +20,7 @@ public class BaseTest {
     GiftCardsPage giftCardsPage;
     HomePage homePage;
     ChatPage chatPage;
+    ProductPage productPage;
     RealRewardsChatPage realRewardsChatPage;
     NotSeeingMyRewardsChatPage notSeeingMyRewardsChatPage;
 
@@ -40,6 +41,7 @@ public class BaseTest {
         chatPage = new ChatPage();
         realRewardsChatPage = new RealRewardsChatPage();
         notSeeingMyRewardsChatPage = new NotSeeingMyRewardsChatPage();
+        productPage=new ProductPage();
     }
 
     @AfterEach
