@@ -13,7 +13,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class HomePage {
     SelenideElement chatButton = $(By.xpath("//a[contains(@class,'live-chat-tab')]"));
     SelenideElement chatMenu = $(By.xpath("//div[contains(@class,'qa-quick-replies')]"));
-    SelenideElement bagIndicator = $(By.xpath("//span[contains(@class, 'bag-indicator-content') and text() = '1']"));
+    SelenideElement bagIndicator = $(By.xpath("//span[contains(@class,'bag-indicator-content')]"));
 
     public void openChat() {
         chatButton.click();
@@ -24,15 +24,22 @@ public class HomePage {
         return chatMenu.is(Condition.hidden);
     }
 
-    public void openDuplicate() {
+    public void openNewTab(String url) {
         getWebDriver().switchTo().newWindow(WindowType.TAB);
-        getWebDriver().get("https://www.ae.com/us/en");
+        getWebDriver().get(url);
     }
 
     public void switchToFirstTab() {
         switchTo().window(0);
-        ;
+    }
+
+    public void refreshPage() {
         getWebDriver().navigate().refresh();
+    }
+
+    public int getBagCount() {
+        String str = bagIndicator.getText();
+        return Integer.parseInt(str.trim());
     }
 
     public boolean checkBagIndicator() {

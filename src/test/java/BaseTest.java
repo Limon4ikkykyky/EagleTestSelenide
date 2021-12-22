@@ -41,7 +41,7 @@ public class BaseTest {
         chatPage = new ChatPage();
         realRewardsChatPage = new RealRewardsChatPage();
         notSeeingMyRewardsChatPage = new NotSeeingMyRewardsChatPage();
-        productPage=new ProductPage();
+        productPage = new ProductPage();
     }
 
     @AfterEach
