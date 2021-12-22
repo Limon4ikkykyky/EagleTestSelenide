@@ -21,6 +21,7 @@ public class BaseTest {
     GiftCardsPage giftCardsPage;
     HomePage homePage;
     ChatPage chatPage;
+    ProductPage productPage;
     RealRewardsChatPage realRewardsChatPage;
     NotSeeingMyRewardsChatPage notSeeingMyRewardsChatPage;
     AccessoriesShoesPage accessoriesShoesPage;
@@ -42,6 +43,7 @@ public class BaseTest {
         chatPage = new ChatPage();
         realRewardsChatPage = new RealRewardsChatPage();
         notSeeingMyRewardsChatPage = new NotSeeingMyRewardsChatPage();
+        productPage = new ProductPage();
         accessoriesShoesPage = new AccessoriesShoesPage();
     }
 
