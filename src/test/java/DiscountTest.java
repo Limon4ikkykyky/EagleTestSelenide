@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import sections.AccessoriesShoesPage;
+
 
 public class DiscountTest extends BaseTest {
     @Test

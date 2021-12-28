@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class ChatTest extends BaseTest {
+
     @Test
     public void chatTest() {
         homePage.openChat();
