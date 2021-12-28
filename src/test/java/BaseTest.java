@@ -1,15 +1,17 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
-import pageObject.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import pageObject.AeriePage;
+import pageObject.GiftCardsPage;
+import pageObject.HomePage;
+import pageObject.ProductPage;
 import sections.AccessoriesShoesPage;
 import sections.Footer;
 import sections.chat.ChatPage;
 import sections.chat.NotSeeingMyRewardsChatPage;
 import sections.chat.RealRewardsChatPage;
 import utils.CommonUtils;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;

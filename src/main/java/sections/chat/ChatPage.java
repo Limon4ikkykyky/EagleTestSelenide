@@ -33,6 +33,7 @@ public class ChatPage {
                 () -> Assertions.assertTrue(iNeedHelpWithSomethingElseButton.is(Condition.visible), "I need help with something elseButton isn't present")
         );
     }
+
     public void clickOnRealRewardsButton() {
         realRewardsButton.click();
     }

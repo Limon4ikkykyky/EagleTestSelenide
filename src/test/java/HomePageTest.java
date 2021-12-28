@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import utils.CommonUtils;
 
 public class HomePageTest extends BaseTest {
+
     @Test
     public void testSwitchingBetweenToTabs() {
         homePage.openNewTab(CommonUtils.getCentralData("url"));
