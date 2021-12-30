@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import pageObject.AeriePage;
@@ -27,6 +28,7 @@ public class BaseTest {
     RealRewardsChatPage realRewardsChatPage;
     NotSeeingMyRewardsChatPage notSeeingMyRewardsChatPage;
     AccessoriesShoesPage accessoriesShoesPage;
+
 
     @BeforeEach
     public void setup() {

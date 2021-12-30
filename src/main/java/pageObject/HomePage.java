@@ -16,10 +16,12 @@ public class HomePage {
     SelenideElement chatMenu = $(By.xpath("//div[contains(@class,'qa-quick-replies')]"));
     SelenideElement bagIndicator = $(By.xpath("//span[contains(@class,'bag-indicator-content')]"));
 
+    @Step("Open Chat")
     public void openChat() {
         chatButton.click();
     }
 
+    @Step("Check that the Chat is closed")
     public boolean chatIsClosed() {
         chatButton.shouldBe(Condition.appear);
         return chatMenu.is(Condition.hidden);
@@ -47,6 +49,7 @@ public class HomePage {
         return Integer.parseInt(str.trim());
     }
 
+    @Step("Check Bag Indicator")
     public boolean checkBagIndicator() {
         bagIndicator.shouldBe(Condition.appear);
         return bagIndicator.is(Condition.visible);

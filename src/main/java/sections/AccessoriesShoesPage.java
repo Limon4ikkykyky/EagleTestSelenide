@@ -1,6 +1,7 @@
 package sections;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 
@@ -14,12 +15,14 @@ public class AccessoriesShoesPage {
     List<SelenideElement> discount = $$(By.xpath("//div[contains(@class,'product-sale-price')]"));
     List<SelenideElement> basePrice = $$(By.xpath("//div[contains(@class,'product-list-price-on-sale')]"));
 
+    @Step("Check Discount")
     public boolean checkDiscount() {
         int listSize = accessoriesShoesList.size();
         int discountSize = discount.size();
         return listSize == discountSize;
     }
 
+    @Step("Convert Price To Double {elements}")
     private List<Double> convertPriceToDouble(List<SelenideElement> elements) {
         List<Double> prices = new ArrayList<>();
         for (SelenideElement discount : elements) {
@@ -31,6 +34,7 @@ public class AccessoriesShoesPage {
         return prices;
     }
 
+    @Step("Is all products have discount")
     public boolean isAllProductsHaveDiscount() {
         return convertPriceToDouble(discount).size() == convertPriceToDouble(basePrice).size();
     }

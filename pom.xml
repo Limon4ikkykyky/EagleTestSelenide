@@ -21,6 +21,7 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
         <junit-platform-surefire-provider.version>1.3.1</junit-platform-surefire-provider.version>
+        <allure.version>2.17.0</allure.version>
 
     </properties>
     <dependencies>
@@ -70,6 +71,11 @@
             <groupId>io.github.wniemiec-util-java</groupId>
             <artifactId>string-utils</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>1.7.0</version>
         </dependency>
     </dependencies>
 
@@ -136,5 +142,6 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 </project>
