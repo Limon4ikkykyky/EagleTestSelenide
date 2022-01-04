@@ -1,7 +1,4 @@
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +9,9 @@ public class GiftCardsTest extends BaseTest {
     @Test
     @Story("The user visits the page Gift Cards and sees two buttons.")
     @Description("Two buttons are displayed on the page.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Issue("Test failed")
+    @TmsLink("1")
     public void giftCardsTest() {
         aeriePage.switchToAerie();
         Assertions.assertTrue(aeriePage.isAerieIconPresent(), "Aerie Icon  is not present");
