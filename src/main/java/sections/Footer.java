@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class Footer {
     SelenideElement giftCardsLink = $(By.xpath("//a[contains(@href,'/us/en/x/gift-cards')]"));
 
-    @Step("Click On Gift Cards")
+    @Step("Click On Gift Cards link")
     public void clickOnGiftCards() {
         giftCardsLink.shouldBe(Condition.appear);
         giftCardsLink.click();

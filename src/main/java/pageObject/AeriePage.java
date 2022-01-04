@@ -20,7 +20,7 @@ public class AeriePage {
         switchToAerie.click();
     }
 
-    @Step("Is Aerie Icon Present")
+    @Step("Verify aerie icon is present")
     public boolean isAerieIconPresent() {
         aerieIcon.shouldBe(Condition.appear);
         return aerieIcon.is(Condition.visible);

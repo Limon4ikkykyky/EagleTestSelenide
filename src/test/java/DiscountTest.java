@@ -11,7 +11,7 @@ public class DiscountTest extends BaseTest {
 
     @Test
     @Story("The user visits the page with discount products and sees that the discount is displayed.")
-    @Description("Discount display test.")
+    @Description("Verify that discount is displayed")
     public void discountTest() {
         aeriePage.switchToAerie();
         aeriePage.isAerieIconPresent();

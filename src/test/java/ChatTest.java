@@ -11,7 +11,7 @@ public class ChatTest extends BaseTest {
 
     @Test
     @Story("The user opens the chat and goes to the information and leaves the chat.")
-    @Description("Chat test with check displayability elements.")
+    @Description("Verify Chat functionality")
     public void chatTest() {
         homePage.openChat();
         chatPage.verifyChatPageElementsIsPresent();

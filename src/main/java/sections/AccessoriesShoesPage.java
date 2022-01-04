@@ -34,7 +34,7 @@ public class AccessoriesShoesPage {
         return prices;
     }
 
-    @Step("Is all products have discount")
+    @Step("Verify that all products have discount")
     public boolean isAllProductsHaveDiscount() {
         return convertPriceToDouble(discount).size() == convertPriceToDouble(basePrice).size();
     }
