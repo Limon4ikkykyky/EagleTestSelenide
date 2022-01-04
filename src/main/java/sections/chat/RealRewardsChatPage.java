@@ -2,6 +2,7 @@ package sections.chat;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
@@ -18,6 +19,7 @@ public class RealRewardsChatPage {
     SelenideElement myQuestionIsntListedButton = $(By.xpath("//button[text()[contains(.,'My Question ')]]"));
     SelenideElement exitButton = $(By.xpath("//button[contains(@class,'_close-icon-wrapper_1m4r4r')]"));
 
+    @Step("Verify real rewards page elements is present")
     public void verifyRealRewardsPageElementsIsPresent() {
         imNotSeeingMyRewardsButton.shouldBe(Condition.appear);
         assertAll("real",
@@ -31,10 +33,12 @@ public class RealRewardsChatPage {
         );
     }
 
+    @Step("Click on Im Not Seeing My Rewards")
     public void clickOnImNotSeeingMyRewards() {
         imNotSeeingMyRewardsButton.click();
     }
 
+    @Step("Click on exit button")
     public void clickOnExitButton() {
         exitButton.click();
     }

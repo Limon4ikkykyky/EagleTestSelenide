@@ -2,6 +2,7 @@ package sections.chat;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
@@ -19,6 +20,7 @@ public class ChatPage {
     SelenideElement inStorePickupButton = $(By.name("In-Store Pickup"));
     SelenideElement iNeedHelpWithSomethingElseButton = $(By.name("I need help with something else"));
 
+    @Step("Verify chat page elements is present")
     public void verifyChatPageElementsIsPresent() {
         title.shouldBe(Condition.appear);
         assertAll("verify chat elements",
@@ -33,6 +35,8 @@ public class ChatPage {
                 () -> Assertions.assertTrue(iNeedHelpWithSomethingElseButton.is(Condition.visible), "I need help with something elseButton isn't present")
         );
     }
+
+    @Step("Click on real rewards button")
     public void clickOnRealRewardsButton() {
         realRewardsButton.click();
     }

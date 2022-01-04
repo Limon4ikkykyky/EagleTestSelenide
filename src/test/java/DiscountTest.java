@@ -1,9 +1,17 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import sections.AccessoriesShoesPage;
 
+@Epic("Product page test.")
+@Feature("Discount.")
 public class DiscountTest extends BaseTest {
+
     @Test
+    @Story("The user visits the page with discount products and sees that the discount is displayed.")
+    @Description("Verify that discount is displayed")
     public void discountTest() {
         aeriePage.switchToAerie();
         aeriePage.isAerieIconPresent();

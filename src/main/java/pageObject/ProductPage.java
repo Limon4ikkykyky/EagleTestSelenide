@@ -2,6 +2,7 @@ package pageObject;
 
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class ProductPage {
     List<SelenideElement> availableSizes = $$(By.xpath("//div[contains(@class,'qa-select-size')]//li[not(contains(@class,'visually-disabled'))]"));
     SelenideElement closeButton = $("[aria-label='Close']");
 
-
+    @Step("Add product to bag")
     public void addToBag() {
         mansDropDown.hover();
         ShoesLink.click();
