@@ -2,6 +2,8 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import com.google.common.io.Files;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -11,6 +13,7 @@ import pageObject.AeriePage;
 import pageObject.GiftCardsPage;
 import pageObject.HomePage;
 import pageObject.ProductPage;
+import pagesConfiguration.Pages;
 import sections.AccessoriesShoesPage;
 import sections.Footer;
 import sections.chat.ChatPage;
@@ -25,15 +28,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class BaseTest {
-    AeriePage aeriePage;
-    Footer footer;
-    GiftCardsPage giftCardsPage;
-    HomePage homePage;
-    ChatPage chatPage;
-    ProductPage productPage;
-    RealRewardsChatPage realRewardsChatPage;
-    NotSeeingMyRewardsChatPage notSeeingMyRewardsChatPage;
-    AccessoriesShoesPage accessoriesShoesPage;
+    Pages pages;
 
     @BeforeEach
     public void setup() {
@@ -41,27 +36,21 @@ public class BaseTest {
         Configuration.timeout = 10000;
         Configuration.pageLoadTimeout = 10000;
         open("https://www.ae.com/us/en");
-        initializeAllPages();
+        injectPages();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
+
     }
 
-    private void initializeAllPages() {
-        aeriePage = new AeriePage();
-        footer = new Footer();
-        giftCardsPage = new GiftCardsPage();
-        homePage = new HomePage();
-        chatPage = new ChatPage();
-        realRewardsChatPage = new RealRewardsChatPage();
-        notSeeingMyRewardsChatPage = new NotSeeingMyRewardsChatPage();
-        productPage = new ProductPage();
-        accessoriesShoesPage = new AccessoriesShoesPage();
+    private void injectPages() {
+        Injector injector = Guice.createInjector(new pagesConfiguration.Configuration());
+        pages = injector.getInstance(Pages.class);
     }
 
     @AfterEach
     public void quite() throws IOException {
         WebDriverRunner.clearBrowserCache();
         getWebDriver().quit();
-         screenshot();
+        screenshot();
     }
 
     @Attachment(type = "image/png")

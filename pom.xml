@@ -20,6 +20,8 @@
         <allure.version>2.17.0</allure.version>
         <allure.selenide>2.13.7</allure.selenide>
         <allure.maven>2.10.0</allure.maven>
+        <guice.version>4.1.0</guice.version>
+        <guava.version>23.0</guava.version>
     </properties>
     <dependencies>
         <dependency>
@@ -85,6 +87,17 @@
             <version>${allure.selenide}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
@@ -97,6 +110,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 
     <build>
         <plugins>
@@ -132,6 +146,7 @@
                             <value>io.qameta.allure.junit5.AllureJunit5</value>
                         </property>
                     </properties>
+                    <properties/>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
@@ -153,6 +168,5 @@
                 <version>${allure.maven}</version>
             </plugin>
         </plugins>
-
     </build>
 </project>

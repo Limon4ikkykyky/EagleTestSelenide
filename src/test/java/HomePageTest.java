@@ -14,11 +14,11 @@ public class HomePageTest extends BaseTest {
     @Story("The user makes a purchase in the duplicated tab after returning to the first tab and checks for a bag change.")
     @Description("The test checks the change of the indicator in the bag")
     public void testSwitchingBetweenToTabs() {
-        homePage.openNewTab(CommonUtils.getCentralData("url"));
-        productPage.addToBag();
-        int bagCountOnFirstPage = homePage.getBagCount();
-        homePage.switchToFirstTab();
-        homePage.refreshPage();
-        Assertions.assertEquals(bagCountOnFirstPage, homePage.getBagCount());
+        pages.homePage.openNewTab(CommonUtils.getCentralData("url"));
+        pages.productPage.addToBag();
+        int bagCountOnFirstPage =  pages.homePage.getBagCount();
+        pages.homePage.switchToFirstTab();
+        pages.homePage.refreshPage();
+        Assertions.assertEquals(bagCountOnFirstPage,  pages.homePage.getBagCount());
     }
 }

@@ -13,14 +13,14 @@ public class ChatTest extends BaseTest {
     @Story("The user opens the chat and goes to the information and leaves the chat.")
     @Description("Verify Chat functionality")
     public void chatTest() {
-        homePage.openChat();
-        chatPage.verifyChatPageElementsIsPresent();
-        chatPage.clickOnRealRewardsButton();
-        realRewardsChatPage.verifyRealRewardsPageElementsIsPresent();
-        realRewardsChatPage.clickOnImNotSeeingMyRewards();
-        notSeeingMyRewardsChatPage.verifyNotSeeingPageElementsIsPresent();
-        notSeeingMyRewardsChatPage.clickOnBackButton();
-        realRewardsChatPage.clickOnExitButton();
-        Assertions.assertTrue(homePage.chatIsClosed(), "chat Not Closed");
+        pages.homePage.openChat();
+        pages.chatPage.verifyChatPageElementsIsPresent();
+        pages.chatPage.clickOnRealRewardsButton();
+        pages.realRewardsChatPage.verifyRealRewardsPageElementsIsPresent();
+        pages.realRewardsChatPage.clickOnImNotSeeingMyRewards();
+        pages.notSeeingMyRewardsChatPage.verifyNotSeeingPageElementsIsPresent();
+        pages.notSeeingMyRewardsChatPage.clickOnBackButton();
+        pages.realRewardsChatPage.clickOnExitButton();
+        Assertions.assertTrue(pages.homePage.chatIsClosed(), "chat Not Closed");
     }
 }

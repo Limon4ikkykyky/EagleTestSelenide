@@ -31,7 +31,7 @@ public class AeriePage {
         footer.scrollIntoView(false);
     }
 
-    @Step("Hower Clearence DropDown")
+    @Step("Hower Clearance DropDown")
     public void howerClearenceDropDown() {
         clearenceDropDown.hover();
         accessoriesAndShoesLink.click();
