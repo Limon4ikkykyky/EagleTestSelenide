@@ -14,7 +14,7 @@
         <junit.jupiter.version>5.8.0-M1</junit.jupiter.version>
         <junit.platform.version>1.8.0-M1</junit.platform.version>
         <allure-junit5.version>2.14.0</allure-junit5.version>
-        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
         <allure.version>2.17.0</allure.version>
@@ -85,7 +85,11 @@
             <version>${allure.selenide}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-surefire-provider</artifactId>
+            <version>1.1.0</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -119,12 +123,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <includes>
-                        <include>src/test/java/ChatTest.java</include>
-                        <include>src/test/java/DiscountTest.java</include>
-                        <include>src/test/java/GiftCardsTest.java</include>
-                        <include>src/test/java/HomePageTest.java</include>
-                    </includes>
+
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
@@ -132,12 +131,12 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
-<!--                    <properties>-->
-<!--                        <property>-->
-<!--                            <name>listener</name>-->
-<!--                            <value>io.qameta.allure.junit5.AllureJunit5</value>-->
-<!--                        </property>-->
-<!--                    </properties>-->
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit5.AllureJunit5</value>
+                        </property>
+                    </properties>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
