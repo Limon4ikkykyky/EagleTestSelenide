@@ -120,7 +120,10 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <includes>
-                        <include>**/*Test.java</include>
+                        <include>src/test/java/ChatTest.java</include>
+                        <include>src/test/java/DiscountTest.java</include>
+                        <include>src/test/java/GiftCardsTest.java</include>
+                        <include>src/test/java/HomePageTest.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
