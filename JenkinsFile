@@ -13,8 +13,8 @@ booleanParam(defaultValue: true, description: 'run tests', name: 'UITests')
    stages {
          stage('UITests') {
            steps {
-             withMaven(maven : 'maven_3_8_4') {
-                                 sh 'mvn test'
+             container('maven') {
+               sh 'mvn test'
              }
            }
 post {
