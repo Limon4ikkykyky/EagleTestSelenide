@@ -19,12 +19,16 @@ booleanParams(defaultValue: true, description: 'run tests', name: 'UITests')
             steps {
                 sh "mvn -Dmaven.test.failure.ignore=true clean test"
             }
-post{
-    always{
-       allure([
-reportBuildPolice: 'ALWAYS'
-results: [[path: 'target/allure-results' ]]
-])
+post {
+          always {
+            script {
+              allure([
+                includeProperties: false,
+                jdk: ‘’,
+                properties: [],
+                reportBuildPolicy: ‘ALWAYS’,
+                results: [[path: ‘target/allure-results’]]
+              ])
     }
   }
 }
