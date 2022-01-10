@@ -13,11 +13,12 @@ booleanParam(defaultValue: true, description: 'run tests', name: 'UITests')
 
    stages {
          stage('UITests') {
-           steps {
-             container('maven') {
-               sh 'mvn test'
-             }
-           }
+          steps {
+                          withMaven(maven : 'LocalMaven') {
+                              sh 'mvn test'
+                          }
+                      }
+                  }
 post {
           always {
             script {
@@ -33,4 +34,3 @@ post {
    }
   }
  }
-}
