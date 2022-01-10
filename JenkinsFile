@@ -1,14 +1,14 @@
 pipeline {
 	agent any
     	stages {
-    	stage(“Compile”) {
+    	stage("Compile") {
             	steps {
-                	sh “mvn compile”
+                	sh "mvn compile"
             	}
         	}
-    	stage(“Unit test”) {
+    	stage("Unit test") {
         	steps {
-                	sh “mvn test”
+                	sh "mvn test"
             	}
         	}
     	}
