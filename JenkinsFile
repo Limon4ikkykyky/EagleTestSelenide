@@ -10,16 +10,13 @@ pipeline{
 /*parameters{
 booleanParam(defaultValue: true, description: 'run tests', name: 'UITests')
 }*/
-    stages {
-        stage('UITests') {
-        when{
-        expression{
-               return params.UITests
-            }
-        }
-            steps {
-                sh "mvn -Dmaven.test.failure.ignore=true clean test"
-            }
+   stages {
+         stage('UITests') {
+           steps {
+             container('maven') {
+               sh 'mvn test'
+             }
+           }
 post {
           always {
             script {
