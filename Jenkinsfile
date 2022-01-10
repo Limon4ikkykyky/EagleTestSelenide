@@ -6,11 +6,10 @@ pipeline {
                 	sh "mvn compile"
             	}
         	}
-    	stage("Unit test") {
+    	stage("UI tests") {
         	steps {
                 	sh "mvn test"
             	}
-        	}
         	post {
                       always {
                         script {
@@ -25,4 +24,5 @@ pipeline {
                }
               }
     	}
+    }
 }
