@@ -30,6 +30,7 @@ post {
                 results: [[path: 'target/allure-results']]
               ])
     }
+   }
   }
  }
 }
