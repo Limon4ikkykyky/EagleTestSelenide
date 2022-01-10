@@ -14,7 +14,7 @@ booleanParam(defaultValue: true, description: 'run tests', name: 'UITests')
          stage('UITests') {
            steps {
              container('maven') {
-               sh 'mvn verify'
+               sh 'mvn test'
              }
            }
 post {
