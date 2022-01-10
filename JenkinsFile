@@ -11,12 +11,22 @@ pipeline{
 booleanParam(defaultValue: true, description: 'run tests', name: 'UITests')
 }*/
 
-   stages {
-         stage('UITests') {
-           steps {
-             container('maven') {
-               sh 'mvn test'
-             }
+    stages {
+           stage ('Compile Stage') {
+
+               steps {
+                   withMaven(maven : 'apache-maven-3.6.1') {
+                       bat 'mvn clean compile'
+                   }
+               }
+           }
+           stage ('Testing Stage') {
+
+               steps {
+                   withMaven(maven : 'apache-maven-3.6.1') {
+                       bat 'mvn test'
+                   }
+               }
            }
 post {
           always {
