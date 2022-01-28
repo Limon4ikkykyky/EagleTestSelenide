@@ -1,10 +1,7 @@
 package pagesConfiguration;
 
 import com.google.inject.Inject;
-import pageObject.AeriePage;
-import pageObject.GiftCardsPage;
-import pageObject.HomePage;
-import pageObject.ProductPage;
+import pageObject.*;
 import sections.AccessoriesShoesPage;
 import sections.Footer;
 import sections.chat.ChatPage;
@@ -38,4 +35,7 @@ public class Pages {
 
     @Inject
     public RealRewardsChatPage realRewardsChatPage;
+
+    @Inject
+    public FavoritesPage favoritesPage;
 }

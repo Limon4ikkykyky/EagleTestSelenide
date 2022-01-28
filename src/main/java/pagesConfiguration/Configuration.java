@@ -2,10 +2,7 @@ package pagesConfiguration;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
-import pageObject.AeriePage;
-import pageObject.GiftCardsPage;
-import pageObject.HomePage;
-import pageObject.ProductPage;
+import pageObject.*;
 import sections.AccessoriesShoesPage;
 import sections.Footer;
 import sections.chat.ChatPage;
@@ -28,5 +25,6 @@ public class Configuration extends AbstractModule {
         bind(ChatPage.class);
         bind(NotSeeingMyRewardsChatPage.class);
         bind(RealRewardsChatPage.class);
+        bind(FavoritesPage.class);
     }
 }
