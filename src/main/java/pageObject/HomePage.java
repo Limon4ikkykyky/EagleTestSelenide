@@ -20,6 +20,12 @@ public class HomePage {
     SelenideElement searchLink = $(By.xpath("//a[contains(@class,'sidetray-search')]"));
     SelenideElement searchInput = $(By.xpath("//input[contains(@class,'form-input-search')]"));
     SelenideElement searchButton = $(By.xpath("//button[contains(@class,'btn search-btn')]"));
+    SelenideElement accountButton = $(By.xpath("//a[contains(@class,'qa-show-sidetray-account')]"));
+    SelenideElement signInButton=$(By.xpath("//button[contains(@class,'qa-btn-signin')]"));
+    SelenideElement emailField=$(By.xpath("//input[contains(@class,'form-input-username')]"));
+    SelenideElement passwordField=$(By.xpath("//input[contains(@class,'form-input-password')]"));
+    SelenideElement loginButton=$(By.xpath("//button[contains(@class,'qa-btn-login')]"));
+    SelenideElement closeButton=$(By.xpath("//button[contains(@class,'btn-close')]"));
 
     @Step("Open Chat")
     public void openChat() {
@@ -77,5 +83,15 @@ public class HomePage {
         searchLink.click();
         searchInput.sendKeys(productName);
         searchButton.click();
+    }
+
+    @Step("Login")
+    public void login(String email, String password) {
+        accountButton.click();
+        signInButton.click();
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
+        loginButton.click();
+        closeButton.click();
     }
 }

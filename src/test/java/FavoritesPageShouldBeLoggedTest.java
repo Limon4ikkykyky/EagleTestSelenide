@@ -19,8 +19,7 @@ public class FavoritesPageShouldBeLoggedTest extends BaseTest {
 
     @BeforeEach
     void SignIn() {
-        pages.homePage.openFavoritesPage();
-        pages.favoritesPage.signIn(email, password);
+        pages.homePage.login(email,password);
     }
 
 

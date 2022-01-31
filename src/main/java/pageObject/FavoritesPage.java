@@ -113,8 +113,7 @@ public class FavoritesPage {
 
     @Step("Get the name of the product")
     public String getProductName() {
-        String str = productName.getText();
-        return str;
+        return productName.getText();
     }
 
     @Step("Click on the product image")
@@ -124,8 +123,7 @@ public class FavoritesPage {
 
     @Step("Get the size of the product")
     public String getSize() {
-        String str = itemsSizes.getText();
-        return str;
+        return itemsSizes.getText();
     }
 
     @Step("Verify Add To Bag button is present")
