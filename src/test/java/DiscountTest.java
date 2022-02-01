@@ -13,10 +13,10 @@ public class DiscountTest extends BaseTest {
     @Story("The user visits the page with discount products and sees that the discount is displayed.")
     @Description("Verify that discount is displayed")
     public void discountTest() {
-        aeriePage.switchToAerie();
-        aeriePage.isAerieIconPresent();
-        aeriePage.howerClearenceDropDown();
-        Assertions.assertTrue(accessoriesShoesPage.checkDiscount(), "size are not equal");
-        Assertions.assertTrue(accessoriesShoesPage.isAllProductsHaveDiscount(), "Some products don't have discount");
+        pages.aeriePage.switchToAerie();
+        pages.aeriePage.isAerieIconPresent();
+        pages.aeriePage.howerClearenceDropDown();
+        Assertions.assertTrue(pages.accessoriesShoesPage.checkDiscount(), "size are not equal");
+        Assertions.assertTrue(pages.accessoriesShoesPage.isAllProductsHaveDiscount(), "Some products don't have discount");
     }
 }

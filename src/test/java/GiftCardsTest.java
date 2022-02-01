@@ -13,11 +13,11 @@ public class GiftCardsTest extends BaseTest {
     @Issue("Test failed")
     @TmsLink("1")
     public void giftCardsTest() {
-        aeriePage.switchToAerie();
-        Assertions.assertTrue(aeriePage.isAerieIconPresent(), "Aerie Icon  is not present");
-        aeriePage.scrollToTheFooter();
-        footer.clickOnGiftCards();
-        giftCardsPage.verifyGiftCardsPageElementsIsPresent();
+        pages.aeriePage.switchToAerie();
+        Assertions.assertTrue( pages.aeriePage.isAerieIconPresent(), "Aerie Icon  is not present");
+        pages.aeriePage.scrollToTheFooter();
+        pages.footer.clickOnGiftCards();
+        pages.giftCardsPage.verifyGiftCardsPageElementsIsPresent();
 
     }
 }
